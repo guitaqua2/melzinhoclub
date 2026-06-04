@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melzinho do Amor Original — Mel Árabe Afrodisíaco</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { 300: '#fcd34d', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
+            dark: { 900: '#0a0702', 800: '#12100a', 700: '#1c1810', 600: '#26210f' }
+          },
+          fontFamily: {
+            display: ['Cormorant', 'Georgia', 'serif'],
+            body: ['DM Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #0a0702; font-family: 'DM Sans', system-ui, sans-serif; color: #f5f0e8; overflow-x: hidden; font-size: 16px; line-height: 1.6; }
+
+    /* Gold gradient text */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Honeycomb pattern bg */
+    .bg-honeycomb {
+      background-color: #0a0702;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-5.7L51.5 47V19L28 5.7 4.5 19v28L28 60.3z' fill='%23f59e0b' fill-opacity='0.04'/%3E%3C/svg%3E");
+    }
+
+    /* Glow effects */
+    .glow-gold { box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), 0 0 80px rgba(245, 158, 11, 0.1); }
+    .glow-gold-sm { box-shadow: 0 0 20px rgba(245, 158, 11, 0.25); }
+    .text-glow { text-shadow: 0 0 30px rgba(245, 158, 11, 0.5); }
+
+    /* Gradient borders */
+    .border-gold-gradient {
+      border: 1px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+    }
+    .border-gold-gradient::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #fcd34d, #d97706, #fcd34d);
+      z-index: -1;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-32px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(32px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 20px rgba(245,158,11,0.4); }
+      50% { box-shadow: 0 0 50px rgba(245,158,11,0.8), 0 0 80px rgba(245,158,11,0.3); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes count-up {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes bee-fly {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(10px, -8px) rotate(5deg); }
+      50% { transform: translate(0, -16px) rotate(0deg); }
+      75% { transform: translate(-10px, -8px) rotate(-5deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    .animate-fade-up { animation: fadeInUp 0.7s ease forwards; }
+    .animate-fade-left { animation: fadeInLeft 0.7s ease forwards; }
+    .animate-fade-right { animation: fadeInRight 0.7s ease forwards; }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .animate-pulse-gold { animation: pulse-gold 2.5s ease-in-out infinite; }
+    .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+    .animate-bee { animation: bee-fly 3s ease-in-out infinite; }
+
+    .shimmer-btn {
+      background: linear-gradient(90deg, #d97706 0%, #fbbf24 30%, #fcd34d 50%, #fbbf24 70%, #d97706 100%);
+      background-size: 200% auto;
+      animation: shimmer 2.5s linear infinite;
+    }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* Card hover */
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(245,158,11,0.2); }
+
+    /* Sticky bar */
+    #sticky-bar { transition: transform 0.3s ease; }
+    #sticky-bar.hidden-bar { transform: translateY(-100%); }
+
+    /* Radial gradient utility */
+    .bg-gradient-radial { background: radial-gradient(circle, var(--tw-gradient-stops)); }
+
+    /* ——— Logo styles ——— */
+    /* ——— Shared filter base ——— */
+    :root {
+      --logo-filter: invert(1) sepia(1) saturate(3.5) hue-rotate(3deg) brightness(1.05);
+      --logo-glow-sm: drop-shadow(0 0 8px rgba(245,158,11,0.65)) drop-shadow(0 0 20px rgba(245,158,11,0.25));
+      --logo-glow-md: drop-shadow(0 0 14px rgba(245,158,11,0.85)) drop-shadow(0 0 36px rgba(245,158,11,0.35));
+      --logo-glow-lg: drop-shadow(0 0 22px rgba(245,158,11,1))    drop-shadow(0 0 60px rgba(245,158,11,0.5));
+    }
+
+    .logo-nav {
+      height: auto;
+      width: clamp(160px, 18vw, 240px);
+      filter: var(--logo-filter) var(--logo-glow-md);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .logo-nav:hover {
+      filter: var(--logo-filter) var(--logo-glow-lg) brightness(1.15);
+      transform: scale(1.03);
+    }
+
+    /* Hero logo — large, animated glow pulse */
+    .logo-hero {
+      height: auto;
+      width: clamp(200px, 50vw, 380px);
+      filter: var(--logo-filter) var(--logo-glow-md);
+      animation: logo-pulse 3s ease-in-out infinite;
+    }
+    @keyframes logo-pulse {
+      0%, 100% { filter: var(--logo-filter) var(--logo-glow-md); }
+      50%       { filter: var(--logo-filter) var(--logo-glow-lg); }
+    }
+
+    /* Footer logo */
+    .logo-footer {
+      height: auto;
+      width: clamp(140px, 30vw, 220px);
+      filter: var(--logo-filter) var(--logo-glow-sm);
+      opacity: 0.92;
+    }
+
+    /* Countdown */
+    .countdown-box {
+      background: rgba(245,158,11,0.1);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 8px;
+      padding: 8px 12px;
+      min-width: 60px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="bg-honeycomb">
+
+  <!-- STICKY ANNOUNCEMENT BAR -->
+  <div id="sticky-bar" class="fixed top-0 left-0 right-0 bg-gold-500 text-dark-900 text-center py-2 px-4 font-semibold" style="z-index: 110; font-size: clamp(0.7rem, 2.5vw, 0.875rem); line-height: 1.4;">
+    <span class="hidden sm:inline">🔥 PROMOÇÃO ATIVA: 5% OFF no PIX + FRETE GRÁTIS para todo o Brasil &nbsp;|&nbsp; Encerra em: <span id="countdown-top" class="font-bold">00:00:00</span></span>
+    <span class="sm:hidden">🔥 5% OFF no PIX + FRETE GRÁTIS &nbsp;|&nbsp; <span id="countdown-top-mobile" class="font-bold">00:00:00</span></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed left-0 right-0 transition-all duration-300" id="navbar" style="z-index: 100; top: 36px;">
+    <div class="mx-4 mt-2">
+      <div class="bg-dark-800/95 backdrop-blur-md border border-gold-700/30 rounded-2xl px-6 py-3 flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="block logo-nav-link">
+            <img
+              src="ChatGPT Image 2 de jun. de 2026, 09_37_38.png"
+              alt="Vital Club — Melzinho do Amor"
+              class="logo-nav"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#beneficios" class="text-gray-400 hover:text-gold-400 transition-colors cursor-pointer">Benefícios</a>
+          <a href="#como-usar" class="text-gray-400 hover:text-gold-400 transition-colors cursor-pointer">Como Usar</a>
+          <a href="#kits" class="text-gray-400 hover:text-gold-400 transition-colors cursor-pointer">Kits</a>
+          <a href="#depoimentos" class="text-gray-400 hover:text-gold-400 transition-colors cursor-pointer">Depoimentos</a>
+          <a href="#faq" class="text-gray-400 hover:text-gold-400 transition-colors cursor-pointer">FAQ</a>
+        </div>
+
+        <!-- CTA -->
+        <a href="#kits" class="shimmer-btn text-dark-900 font-bold text-sm px-5 py-2.5 rounded-xl cursor-pointer hidden md:block">
+          Comprar Agora
+        </a>
+
+        <!-- Mobile menu btn -->
+        <button id="menu-btn" class="md:hidden text-gold-400 cursor-pointer" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden mx-4 mt-1" style="position: relative; z-index: 999;">
+      <div class="border border-gold-700/40 rounded-2xl p-5 flex flex-col gap-2 max-w-7xl mx-auto" style="background: #0e0c07; box-shadow: 0 8px 40px rgba(0,0,0,0.9);">
+        <a href="#beneficios" class="text-gray-200 hover:text-gold-400 transition-colors cursor-pointer py-2.5 px-3 rounded-xl hover:bg-gold-500/10 font-medium text-base border-b border-gold-700/10">Benefícios</a>
+        <a href="#como-usar" class="text-gray-200 hover:text-gold-400 transition-colors cursor-pointer py-2.5 px-3 rounded-xl hover:bg-gold-500/10 font-medium text-base border-b border-gold-700/10">Como Usar</a>
+        <a href="#kits" class="text-gray-200 hover:text-gold-400 transition-colors cursor-pointer py-2.5 px-3 rounded-xl hover:bg-gold-500/10 font-medium text-base border-b border-gold-700/10">Kits &amp; Preços</a>
+        <a href="#depoimentos" class="text-gray-200 hover:text-gold-400 transition-colors cursor-pointer py-2.5 px-3 rounded-xl hover:bg-gold-500/10 font-medium text-base border-b border-gold-700/10">Depoimentos</a>
+        <a href="#faq" class="text-gray-200 hover:text-gold-400 transition-colors cursor-pointer py-2.5 px-3 rounded-xl hover:bg-gold-500/10 font-medium text-base">FAQ</a>
+        <div class="pt-2">
+          <a href="#kits" class="shimmer-btn text-dark-900 font-bold text-center block px-5 py-3.5 rounded-xl cursor-pointer text-base">Comprar Agora</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="relative min-h-screen flex items-center pb-20 overflow-hidden" style="padding-top: clamp(8rem, 22vw, 11rem);">
+    <!-- Background layers -->
+    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-dark-900 via-transparent to-dark-900/80"></div>
+    <!-- Gold orbs -->
+    <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gold-600/8 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Decorative honeycomb lines -->
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none">
+      <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <defs><pattern id="hex" x="0" y="0" width="60" height="104" patternUnits="userSpaceOnUse">
+          <path d="M30 2L58 18v32L30 66 2 50V18z" fill="none" stroke="#f59e0b" stroke-width="1"/>
+          <path d="M30 66L58 82v32L30 130 2 114V82z" fill="none" stroke="#f59e0b" stroke-width="1"/>
+          <path d="M-30 34L-2 18v32L-30 66-58 50V18z" fill="none" stroke="#f59e0b" stroke-width="1"/>
+        </pattern></defs>
+        <rect width="400" height="800" fill="url(#hex)"/>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left content -->
+        <div class="animate-fade-up">
+          <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/30 rounded-full px-4 py-2 mb-6">
+            <span class="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
+            <span class="text-gold-400 text-sm font-medium">Mel Árabe Original Importado</span>
+          </div>
+
+          <h1 class="font-display leading-none mb-6">
+            <span class="block text-6xl sm:text-7xl lg:text-8xl text-white font-light" style="letter-spacing:-0.02em;">Melzinho</span>
+            <span class="block text-6xl sm:text-7xl lg:text-8xl text-gold-gradient text-glow font-bold italic" style="letter-spacing:-0.02em;">do Amor</span>
+            <span class="block text-gray-400 font-normal mt-3 font-body tracking-widest uppercase" style="letter-spacing:0.18em; font-size:clamp(0.75rem, 2.5vw, 1rem);">Original &amp; Afrodisíaco</span>
+          </h1>
+
+          <p class="text-gray-300 leading-relaxed mb-8 max-w-xl" style="font-size:clamp(1rem, 2.5vw, 1.125rem);">
+            O mel árabe VIP que desperta sua energia, renova o desejo e transforma seus momentos íntimos. Efeito em <strong class="text-gold-400">30 minutos</strong>, duração de até <strong class="text-gold-400">5 dias</strong>.
+          </p>
+
+          <!-- Benefits pills -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="bg-dark-700/80 border border-gold-700/40 text-gold-300 text-sm px-4 py-1.5 rounded-full">Energia Imediata</span>
+            <span class="bg-dark-700/80 border border-gold-700/40 text-gold-300 text-sm px-4 py-1.5 rounded-full">Desejo Renovado</span>
+            <span class="bg-dark-700/80 border border-gold-700/40 text-gold-300 text-sm px-4 py-1.5 rounded-full">100% Natural</span>
+            <span class="bg-dark-700/80 border border-gold-700/40 text-gold-300 text-sm px-4 py-1.5 rounded-full">Entrega Discreta</span>
+          </div>
+
+          <!-- CTA Block -->
+          <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            <a href="#kits" class="shimmer-btn animate-pulse-gold text-dark-900 font-bold text-lg px-8 py-4 rounded-2xl cursor-pointer text-center">
+              Quero Meu Kit Agora
+            </a>
+            <a href="#como-usar" class="flex items-center justify-center sm:justify-start gap-2 text-gold-400 font-medium cursor-pointer hover:text-gold-300 transition-colors">
+              <svg class="w-10 h-10 border border-gold-500/40 rounded-full p-2 bg-gold-500/10 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Ver como funciona
+            </a>
+          </div>
+
+          <!-- Social proof mini -->
+          <div class="mt-8 flex items-center gap-4">
+            <div class="flex -space-x-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 border-2 border-dark-800 flex items-center justify-center text-white font-bold text-xs">M</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 border-2 border-dark-800 flex items-center justify-center text-white font-bold text-xs">R</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-500 border-2 border-dark-800 flex items-center justify-center text-white font-bold text-xs">J</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 border-2 border-dark-800 flex items-center justify-center text-dark-900 font-bold text-xs">+</div>
+            </div>
+            <div>
+              <div class="flex text-gold-400 text-sm">★★★★★</div>
+              <p class="text-gray-400 text-sm"><strong class="text-white">+4.800 clientes</strong> satisfeitos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — Product Photo -->
+        <div class="flex justify-center lg:justify-end animate-fade-right">
+          <div class="relative w-full max-w-xl">
+
+            <!-- Ambient glow behind photo -->
+            <div class="absolute inset-0 bg-gradient-radial from-gold-500/20 via-gold-700/5 to-transparent rounded-3xl blur-2xl scale-105 pointer-events-none"></div>
+
+            <!-- Gold border frame -->
+            <div class="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-gold-400 via-gold-700 to-gold-400 opacity-60 pointer-events-none z-0"></div>
+
+            <!-- Product photo — full width, no crop -->
+            <div class="relative rounded-3xl overflow-hidden animate-float shadow-2xl z-10" style="box-shadow: 0 0 60px rgba(245,158,11,0.25), 0 30px 80px rgba(0,0,0,0.6);">
+              <img
+                src="produto.png"
+                alt="Vital Honey VIP — Melzinho do Amor, caixa azul marinho com dourado e sachês dourados 15g"
+                class="w-full h-auto block"
+              />
+
+              <!-- Gradient overlay bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-900/70 via-transparent to-transparent pointer-events-none"></div>
+
+              <!-- VIP badge -->
+              <div class="absolute top-4 left-4 bg-gold-500/90 backdrop-blur-sm text-dark-900 font-bold text-xs px-3 py-1.5 rounded-full">
+                ★ VIP ORIGINAL
+              </div>
+
+              <!-- Ingredients overlaid on right side (matching original photo layout) -->
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <div class="bg-dark-900/75 backdrop-blur-sm border border-gold-700/40 rounded-xl px-3 py-2 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-full border border-gold-600/50 bg-gold-500/15 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c-1.5 3-4 5-4 8a4 4 0 008 0c0-3-2.5-5-4-8z"/></svg>
+                  </div>
+                  <div><p class="text-white font-semibold text-xs leading-none">Pure Honey</p><p class="text-gold-600 text-xs">Premium</p></div>
+                </div>
+                <div class="bg-dark-900/75 backdrop-blur-sm border border-gold-700/40 rounded-xl px-3 py-2 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-full border border-gold-600/50 bg-gold-500/15 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22V12M9 5s-3 3-3 7m12-7s3 3 3 7"/></svg>
+                  </div>
+                  <div><p class="text-white font-semibold text-xs leading-none">Ginseng</p><p class="text-gold-600 text-xs">Energy</p></div>
+                </div>
+                <div class="bg-dark-900/75 backdrop-blur-sm border border-gold-700/40 rounded-xl px-3 py-2 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-full border border-gold-600/50 bg-gold-500/15 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l7 9-7 9m14-18l-7 9 7 9"/></svg>
+                  </div>
+                  <div><p class="text-white font-semibold text-xs leading-none">Tribulus</p><p class="text-gold-600 text-xs">Stamina</p></div>
+                </div>
+                <div class="bg-dark-900/75 backdrop-blur-sm border border-gold-700/40 rounded-xl px-3 py-2 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-full border border-gold-600/50 bg-gold-500/15 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </div>
+                  <div><p class="text-white font-semibold text-xs leading-none">Energia</p><p class="text-gold-600 text-xs">+Performance</p></div>
+                </div>
+              </div>
+
+              <!-- Bottom info bar -->
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-dark-900/80 backdrop-blur-sm border border-gold-500/30 rounded-2xl px-4 py-3 flex items-center justify-between">
+                  <div>
+                    <p class="text-gold-400 font-display font-bold text-base leading-none">Vital Honey VIP</p>
+                    <p class="text-gray-400 text-xs mt-0.5">12 Sachês × 15g • Importado</p>
+                  </div>
+                  <div class="text-right">
+                    <div class="flex text-gold-400 text-xs justify-end">★★★★★</div>
+                    <p class="text-gray-500 text-xs">4.9/5</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badge -->
+            <div class="absolute -top-4 -left-4 bg-dark-800 border border-gold-500/50 rounded-2xl px-4 py-2 glow-gold-sm hidden sm:block z-20">
+              <p class="text-gold-400 font-bold text-sm">12 sachês × 15g</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+      <p class="text-gray-500 text-xs tracking-widest uppercase">Role para baixo</p>
+      <div class="w-5 h-8 border border-gray-600 rounded-full flex justify-center pt-1.5">
+        <div class="w-1.5 h-1.5 bg-gold-400 rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BAR ===================== -->
+  <section class="py-6 bg-dark-800/80 border-y border-gold-700/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="flex items-center gap-3 reveal">
+          <svg class="w-8 h-8 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          <div><p class="text-white font-semibold text-sm">Frete Grátis</p><p class="text-gray-500 text-xs">Para todo o Brasil</p></div>
+        </div>
+        <div class="flex items-center gap-3 reveal delay-100">
+          <svg class="w-8 h-8 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <div><p class="text-white font-semibold text-sm">12x no Cartão</p><p class="text-gray-500 text-xs">Sem juros</p></div>
+        </div>
+        <div class="flex items-center gap-3 reveal delay-200">
+          <svg class="w-8 h-8 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <div><p class="text-white font-semibold text-sm">Garantia 7 dias</p><p class="text-gray-500 text-xs">Satisfação garantida</p></div>
+        </div>
+        <div class="flex items-center gap-3 reveal delay-300">
+          <svg class="w-8 h-8 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <div><p class="text-white font-semibold text-sm">Compra Segura</p><p class="text-gray-500 text-xs">Criptografia SSL</p></div>
+        </div>
+        <div class="flex items-center gap-3 reveal delay-400 col-span-2 md:col-span-1">
+          <svg class="w-8 h-8 text-gold-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+          <div><p class="text-white font-semibold text-sm">Embalagem Discreta</p><p class="text-gray-500 text-xs">Sem identificação</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="py-16 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="reveal">
+          <p class="text-4xl sm:text-5xl font-display font-black text-gold-gradient mb-1">+4.800</p>
+          <p class="text-gray-400 text-sm">Clientes satisfeitos</p>
+        </div>
+        <div class="reveal delay-100">
+          <p class="text-4xl sm:text-5xl font-display font-black text-gold-gradient mb-1">98%</p>
+          <p class="text-gray-400 text-sm">Aprovação geral</p>
+        </div>
+        <div class="reveal delay-200">
+          <p class="text-4xl sm:text-5xl font-display font-black text-gold-gradient mb-1">30min</p>
+          <p class="text-gray-400 text-sm">Para sentir o efeito</p>
+        </div>
+        <div class="reveal delay-300">
+          <p class="text-4xl sm:text-5xl font-display font-black text-gold-gradient mb-1">5 dias</p>
+          <p class="text-gray-400 text-sm">De duração por sachê</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENEFÍCIOS ===================== -->
+  <section id="beneficios" class="py-24 bg-dark-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="text-gold-500 font-semibold text-sm tracking-widest uppercase mb-3">Por que funciona</p>
+        <h2 class="font-display text-5xl sm:text-6xl text-white mb-4 font-light leading-tight" style="letter-spacing: -0.02em;">
+          Tudo que você precisa para<br><em class="text-gold-gradient font-semibold not-italic">brilhar de novo</em>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Fórmula exclusiva com mel árabe VIP + ervas selecionadas do Oriente Médio. Zero química, zero efeitos colaterais.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Benefit 1 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal">
+          <div class="w-14 h-14 bg-gold-500/15 rounded-2xl flex items-center justify-center mb-5 border border-gold-500/30">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <p class="text-gold-400 text-xs font-bold tracking-widest uppercase mb-1">01</p>
+          <h3 class="text-white font-bold text-xl mb-3">Energia Imediata</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Sinta a diferença em 30 minutos. Disposição que dura até 5 dias. Sem estimulantes artificiais.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-100">
+          <div class="w-14 h-14 bg-gold-500/15 rounded-2xl flex items-center justify-center mb-5 border border-gold-500/30">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <p class="text-gold-400 text-xs font-bold tracking-widest uppercase mb-1">02</p>
+          <h3 class="text-white font-bold text-xl mb-3">Desejo Renovado</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Estimula a libido naturalmente, sem efeitos colaterais. Redescubra o prazer com intensidade.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-200">
+          <div class="w-14 h-14 bg-gold-500/15 rounded-2xl flex items-center justify-center mb-5 border border-gold-500/30">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <p class="text-gold-400 text-xs font-bold tracking-widest uppercase mb-1">03</p>
+          <h3 class="text-white font-bold text-xl mb-3">Performance Real</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Resistência, firmeza e confiança no momento certo. Desempenho elevado de forma natural.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-300">
+          <div class="w-14 h-14 bg-gold-500/15 rounded-2xl flex items-center justify-center mb-5 border border-gold-500/30">
+            <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <p class="text-gold-400 text-xs font-bold tracking-widest uppercase mb-1">04</p>
+          <h3 class="text-white font-bold text-xl mb-3">100% Natural</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Mel árabe puro + ervas selecionadas. Zero química, zero contraindicação. Seguro para uso contínuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMO USAR ===================== -->
+  <section id="como-usar" class="py-24 bg-dark-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-gold-900/5 via-transparent to-gold-900/5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 reveal">
+        <p class="text-gold-500 font-semibold text-sm tracking-widest uppercase mb-3">Simples e eficaz</p>
+        <h2 class="font-display text-5xl sm:text-6xl text-white mb-4 font-light leading-tight" style="letter-spacing: -0.02em;">
+          Como usar o <em class="text-gold-gradient font-semibold not-italic">Melzinho do Amor</em>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <!-- Connector line -->
+        <div class="hidden md:block absolute top-16 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-gold-600/40 to-transparent"></div>
+
+        <div class="text-center reveal">
+          <div class="w-16 h-16 bg-gold-500/15 border border-gold-500/40 rounded-full flex items-center justify-center mx-auto mb-6 glow-gold-sm">
+            <span class="text-gold-400 font-display font-black text-2xl">1</span>
+          </div>
+          <h3 class="text-white font-bold text-xl mb-3">Abra o Sachê</h3>
+          <p class="text-gray-400 leading-relaxed">Rasgue a embalagem e consuma diretamente ou dissolva em uma bebida quente de sua preferência.</p>
+        </div>
+
+        <div class="text-center reveal delay-200">
+          <div class="w-16 h-16 bg-gold-500/15 border border-gold-500/40 rounded-full flex items-center justify-center mx-auto mb-6 glow-gold-sm">
+            <span class="text-gold-400 font-display font-black text-2xl">2</span>
+          </div>
+          <h3 class="text-white font-bold text-xl mb-3">Aguarde 30 minutos</h3>
+          <p class="text-gray-400 leading-relaxed">Os ativos naturais começam a agir rapidamente. Sinta a energia e o calor se espalhando pelo corpo.</p>
+        </div>
+
+        <div class="text-center reveal delay-300">
+          <div class="w-16 h-16 bg-gold-500/15 border border-gold-500/40 rounded-full flex items-center justify-center mx-auto mb-6 glow-gold-sm">
+            <span class="text-gold-400 font-display font-black text-2xl">3</span>
+          </div>
+          <h3 class="text-white font-bold text-xl mb-3">Aproveite por 5 dias</h3>
+          <p class="text-gray-400 leading-relaxed">Um único sachê proporciona energia e desejo por até 5 dias consecutivos. Resultado duradouro.</p>
+        </div>
+      </div>
+
+      <!-- Warning/tip box -->
+      <div class="mt-12 bg-gold-500/8 border border-gold-700/30 rounded-2xl p-6 flex gap-4 items-start reveal max-w-3xl mx-auto">
+        <svg class="w-6 h-6 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p class="text-gray-300 text-sm leading-relaxed"><strong class="text-gold-400">Dica de uso:</strong> Para melhores resultados, consuma com o estômago levemente alimentado. Recomendado no máximo 1 sachê a cada 5 dias. Produto natural, sem contraindicações conhecidas para adultos saudáveis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KITS / PRICING ===================== -->
+  <section id="kits" class="py-24 bg-dark-800/60 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold-500/8 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-6 reveal">
+        <span class="inline-block bg-gold-500/15 border border-gold-500/40 text-gold-400 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4">Oferta por tempo limitado</span>
+        <h2 class="font-display text-5xl sm:text-6xl text-white mb-3 font-light leading-tight" style="letter-spacing: -0.02em;">
+          Escolha seu kit e <em class="text-gold-gradient font-semibold not-italic">economize até R$ 90</em>
+        </h2>
+        <p class="text-gray-400 text-lg">Quanto mais você leva, menor o preço por sachê</p>
+      </div>
+
+      <!-- Countdown -->
+      <div class="flex justify-center gap-4 mb-12 reveal">
+        <div class="countdown-box">
+          <p class="text-gold-400 font-bold text-2xl" id="hours">00</p>
+          <p class="text-gray-500 text-xs">horas</p>
+        </div>
+        <div class="flex items-center text-gold-400 font-bold text-2xl">:</div>
+        <div class="countdown-box">
+          <p class="text-gold-400 font-bold text-2xl" id="minutes">00</p>
+          <p class="text-gray-500 text-xs">min</p>
+        </div>
+        <div class="flex items-center text-gold-400 font-bold text-2xl">:</div>
+        <div class="countdown-box">
+          <p class="text-gold-400 font-bold text-2xl" id="seconds">00</p>
+          <p class="text-gray-500 text-xs">seg</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 items-start">
+
+        <!-- Kit 3 unidades -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl overflow-hidden reveal card-hover cursor-pointer relative">
+          <div class="relative bg-dark-800" style="height:360px;">
+            <img src="3.png" alt="Kit 3 Sachês Vital Honey" class="w-full h-full object-contain"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700/70 via-transparent to-transparent pointer-events-none"></div>
+            <span class="absolute top-3 left-3 bg-dark-900/80 border border-gold-700/40 text-gold-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">STARTER</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-2xl mb-1">Experimente</h3>
+            <p class="text-gray-400 text-sm mb-4">3 Sachês Melzinho do Amor 15g</p>
+            <div class="mb-4">
+              <p class="text-5xl font-display font-bold text-white" style="letter-spacing:-0.03em;">R$ 87,90</p>
+              <p class="text-gray-500 text-sm">ou 12x de R$ 7,33</p>
+              <p class="text-gray-600 text-xs">R$ 29,30/sachê</p>
+            </div>
+            <hr class="border-gold-700/20 my-4"/>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Produto original importado</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Embalagem 100% discreta</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Garantia de 7 dias</li>
+            </ul>
+            <button class="w-full bg-dark-600 hover:bg-dark-500 border border-gold-600/40 hover:border-gold-500/60 text-gold-400 font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer">COMPRAR AGORA</button>
+          </div>
+        </div>
+
+        <!-- Kit 12 unidades — destaque -->
+        <div class="bg-dark-700/80 border-2 border-gold-500/60 rounded-3xl overflow-hidden reveal delay-100 card-hover cursor-pointer relative glow-gold scale-[1.03]">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10 bg-gold-500 text-dark-900 font-bold text-sm px-6 py-1.5 rounded-full whitespace-nowrap">
+            🔥 MAIS VENDIDO
+          </div>
+          <div class="relative bg-dark-800 mt-4" style="height:360px;">
+            <img src="12.png" alt="Kit 12 Sachês Vital Honey — Caixa Completa" class="w-full h-full object-contain"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700/70 via-transparent to-transparent pointer-events-none"></div>
+            <span class="absolute top-3 left-3 bg-dark-900/80 border border-gold-700/40 text-gold-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">CAIXA COMPLETA</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-2xl mb-1">Mais Popular</h3>
+            <p class="text-gold-400 text-sm font-semibold mb-1">Escolha mais inteligente</p>
+            <p class="text-gray-400 text-sm mb-4">Caixa com 12 Sachês Melzinho do Amor 15g</p>
+            <div class="mb-2">
+              <p class="text-5xl font-display font-bold text-white" style="letter-spacing:-0.03em;">R$ 237,90</p>
+              <p class="text-gray-500 text-sm">ou 12x de R$ 19,83</p>
+              <p class="text-gray-600 text-xs">R$ 19,83/sachê</p>
+            </div>
+            <div class="inline-block bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs font-bold px-3 py-1 rounded-full mb-4">✓ MAIOR ECONOMIA</div>
+            <hr class="border-gold-700/20 my-4"/>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Produto original importado</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Embalagem 100% discreta</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Garantia de 7 dias</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Frete prioritário</li>
+            </ul>
+            <button class="shimmer-btn w-full text-dark-900 font-bold text-lg py-4 rounded-2xl cursor-pointer animate-pulse-gold">QUERO ESSE KIT</button>
+          </div>
+        </div>
+
+        <!-- Kit 5 unidades -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl overflow-hidden reveal delay-200 card-hover cursor-pointer relative">
+          <div class="relative bg-dark-800" style="height:360px;">
+            <img src="5.png" alt="Kit 5 Sachês Vital Honey" class="w-full h-full object-contain"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-700/70 via-transparent to-transparent pointer-events-none"></div>
+            <span class="absolute top-3 left-3 bg-dark-900/80 border border-gold-700/40 text-gold-400 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">KIT ESPECIAL</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-bold text-2xl mb-1">Custo-Benefício</h3>
+            <p class="text-gray-400 text-sm mb-4">Kit com 5 Sachês Melzinho do Amor 15g</p>
+            <div class="mb-2">
+              <p class="text-5xl font-display font-bold text-white" style="letter-spacing:-0.03em;">R$ 147,90</p>
+              <p class="text-gray-500 text-sm">ou 12x de R$ 12,33</p>
+              <p class="text-gray-600 text-xs">R$ 29,58/sachê</p>
+            </div>
+            <div class="inline-block bg-gold-500/20 border border-gold-500/40 text-gold-400 text-xs font-bold px-3 py-1 rounded-full mb-4">✓ BOA ECONOMIA</div>
+            <hr class="border-gold-700/20 my-4"/>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Produto original importado</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Embalagem 100% discreta</li>
+              <li class="flex items-center gap-3 text-gray-300 text-sm"><svg class="w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>Garantia de 7 dias</li>
+            </ul>
+            <button class="w-full bg-dark-600 hover:bg-dark-500 border border-gold-600/40 hover:border-gold-500/60 text-gold-400 font-bold py-4 rounded-2xl transition-all duration-200 cursor-pointer">QUERO A CAIXA</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Payment methods -->
+      <div class="mt-10 flex flex-col items-center gap-4 reveal">
+        <p class="text-gray-500 text-sm">Pagamento 100% seguro</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <div class="bg-dark-700/60 border border-gold-700/20 rounded-xl px-4 py-2 text-gray-400 text-sm font-medium">💳 Cartão de Crédito</div>
+          <div class="bg-dark-700/60 border border-gold-700/20 rounded-xl px-4 py-2 text-gray-400 text-sm font-medium">📱 PIX (-5%)</div>
+          <div class="bg-dark-700/60 border border-gold-700/20 rounded-xl px-4 py-2 text-gray-400 text-sm font-medium">🏦 Boleto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section id="depoimentos" class="py-24 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="text-gold-500 font-semibold text-sm tracking-widest uppercase mb-3">Resultados reais</p>
+        <h2 class="font-display text-5xl sm:text-6xl text-white mb-4 font-light leading-tight" style="letter-spacing: -0.02em;">
+          O que nossos clientes <em class="text-gold-gradient font-semibold not-italic">dizem</em>
+        </h2>
+        <div class="flex justify-center items-center gap-2">
+          <div class="flex text-gold-400">★★★★★</div>
+          <p class="text-gray-400 text-sm">4.9/5 baseado em 847 avaliações</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Cara, sério que ficou surpreso. Comprei sem muita expectativa e o resultado foi incrível. 30 minutos e senti a diferença. Já fiz o pedido da caixa com 12."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">M</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Marcos A.</p>
+              <p class="text-gray-500 text-xs">São Paulo, SP ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-100 relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Melhor produto que já usei. Meu marido e eu usamos juntos e foi uma experiência completamente diferente. Muito mais energia, muito mais prazer. Recomendo!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">R</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Renata C.</p>
+              <p class="text-gray-500 text-xs">Rio de Janeiro, RJ ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-200 relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Já tenho 52 anos e achei que não ia funcionar muito. Errei feio. Produto é sério, natural e com resultado. O frete chegou discreto como prometido. 10/10."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">J</div>
+            <div>
+              <p class="text-white font-semibold text-sm">José P.</p>
+              <p class="text-gray-500 text-xs">Belo Horizonte, MG ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-100 relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Produto chegou super rápido, embalagem discreta mesmo. E o efeito? Passou dos 5 dias aqui. Estou no 6º dia ainda sentindo diferença. Vou comprar mais."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">F</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Felipe S.</p>
+              <p class="text-gray-500 text-xs">Curitiba, PR ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-200 relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Minha vida íntima melhorou muito. Comprei o kit de 3 e os dois primeiros já foram incrível. Agora fui na caixa de 12. Qualidade impecável, original mesmo."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">A</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Ana L.</p>
+              <p class="text-gray-500 text-xs">Salvador, BA ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="bg-dark-700/60 border border-gold-700/20 rounded-3xl p-6 card-hover cursor-pointer reveal delay-300 relative">
+          <div class="absolute top-5 right-5 text-gold-500/20 text-5xl font-serif leading-none">"</div>
+          <div class="flex text-gold-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 leading-relaxed mb-6 text-sm">"Comprei desconfiado, mas a indicação de um amigo me convenceu. Produto é nota 10. Atendimento rápido, chegou antes do prazo e funcionou muito bem."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-red-400 to-orange-500 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">C</div>
+            <div>
+              <p class="text-white font-semibold text-sm">Carlos M.</p>
+              <p class="text-gray-500 text-xs">Porto Alegre, RS ✓ Compra verificada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="py-24 bg-dark-800/50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="text-gold-500 font-semibold text-sm tracking-widest uppercase mb-3">Tire suas dúvidas</p>
+        <h2 class="font-display text-5xl sm:text-6xl text-white mb-4 font-light leading-tight" style="letter-spacing: -0.02em;">
+          Perguntas <em class="text-gold-gradient font-semibold not-italic">frequentes</em>
+        </h2>
+      </div>
+
+      <div class="space-y-3" id="faq-container">
+        <!-- FAQ items generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="py-24 bg-dark-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-gold-900/15 via-dark-900 to-gold-900/10 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/8 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="reveal">
+        <p class="text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">Não perca essa oportunidade</p>
+        <h2 class="font-display text-5xl sm:text-7xl text-white mb-6 font-light leading-tight" style="letter-spacing: -0.03em;">
+          Transforme seus <em class="text-gold-gradient font-bold not-italic">momentos íntimos</em> hoje
+        </h2>
+        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          Mais de 4.800 pessoas já descobriram o poder do Melzinho do Amor. Chegou a sua vez.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <a href="#kits" class="shimmer-btn animate-pulse-gold text-dark-900 font-bold text-xl px-10 py-5 rounded-2xl cursor-pointer inline-block">
+            Garantir Meu Kit Agora
+          </a>
+          <a href="https://wa.me/5511915950933" class="flex items-center gap-3 bg-green-600 hover:bg-green-500 text-white font-bold text-lg px-8 py-5 rounded-2xl transition-colors cursor-pointer">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Comprar pelo WhatsApp
+          </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Garantia 7 dias
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Compra 100% segura
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+            Entrega discreta
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            Frete grátis
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-dark-900 border-t border-gold-700/20 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <!-- Brand -->
+        <div>
+          <div class="mb-4">
+            <img src="ChatGPT Image 2 de jun. de 2026, 09_37_38.png" alt="Vital Club — Melzinho do Amor" class="logo-footer" />
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">100% natural e afrodisíaco. O melzinho do amor garante energia e vitalidade que dura entre 3 e 5 dias.</p>
+          <a href="https://instagram.com/melzinhodoamororiginall" class="inline-flex items-center gap-2 text-gold-600 hover:text-gold-400 text-sm transition-colors cursor-pointer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @melzinhodoamororiginall
+          </a>
+        </div>
+
+        <!-- Atendimento -->
+        <div>
+          <h4 class="text-gold-500 font-bold text-xs tracking-widest uppercase mb-4">Central de Atendimento</h4>
+          <div class="space-y-3 text-sm text-gray-400">
+            <p>SAC — Serviço ao Consumidor</p>
+            <p>melzinhodoamororiginal1@gmail.com</p>
+            <p>WhatsApp: +55 (11) 9 1595-0933</p>
+            <p>Segunda a Sexta: 09h–18h</p>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="text-gold-500 font-bold text-xs tracking-widest uppercase mb-4">Links Úteis</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-gold-400 transition-colors cursor-pointer">Rastrear Pedido</a></li>
+            <li><a href="#" class="hover:text-gold-400 transition-colors cursor-pointer">Política de Reembolso</a></li>
+            <li><a href="#" class="hover:text-gold-400 transition-colors cursor-pointer">Termos de Serviço</a></li>
+            <li><a href="#" class="hover:text-gold-400 transition-colors cursor-pointer">Privacidade</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-gold-500 font-bold text-xs tracking-widest uppercase mb-4">Receba Promoções</h4>
+          <p class="text-gray-500 text-sm mb-4">Inscreva-se para receber descontos exclusivos no seu e-mail.</p>
+          <form class="flex flex-col gap-3" onsubmit="return false;">
+            <input type="email" placeholder="Seu e-mail" aria-label="E-mail" class="bg-dark-700/80 border border-gold-700/30 focus:border-gold-500/60 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 outline-none transition-colors" />
+            <button class="shimmer-btn text-dark-900 font-bold py-3 rounded-xl cursor-pointer text-sm">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-gold-700/15 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+        <p>© 2025 Melzinho do Amor Original. Todos os direitos reservados. Bairro Tatuapé — São Paulo/SP</p>
+        <p class="text-center">Preços e condições exclusivos para compras neste site oficial. Evite falsificações.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/5511915950933" target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-400 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110 cursor-pointer" aria-label="Comprar pelo WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // ——— Mobile menu ———
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close on link click
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // ——— Scroll reveal ———
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    // ——— Navbar position: tracks sticky bar height dynamically ———
+    function adjustNavbar() {
+      const bar = document.getElementById('sticky-bar');
+      const nav = document.getElementById('navbar');
+      if (bar && nav) nav.style.top = bar.offsetHeight + 'px';
+    }
+    adjustNavbar();
+    window.addEventListener('resize', adjustNavbar);
+
+    // ——— Countdown timer (23h59 rolling) ———
+    function startCountdown(seconds) {
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      const topEl = document.getElementById('countdown-top');
+      const topMobileEl = document.getElementById('countdown-top-mobile');
+
+      let remaining = seconds;
+      function tick() {
+        const h = Math.floor(remaining / 3600);
+        const m = Math.floor((remaining % 3600) / 60);
+        const s = remaining % 60;
+        const fmt = (n) => String(n).padStart(2, '0');
+        const str = `${fmt(h)}:${fmt(m)}:${fmt(s)}`;
+        if (hoursEl) hoursEl.textContent = fmt(h);
+        if (minutesEl) minutesEl.textContent = fmt(m);
+        if (secondsEl) secondsEl.textContent = fmt(s);
+        if (topEl) topEl.textContent = str;
+        if (topMobileEl) topMobileEl.textContent = str;
+        if (remaining > 0) { remaining--; setTimeout(tick, 1000); }
+        else { remaining = 86399; tick(); }
+      }
+      tick();
+    }
+    // Random start between 10min and 4h for urgency
+    startCountdown(Math.floor(Math.random() * 14400) + 600);
+
+    // ——— FAQ accordion ———
+    const faqs = [
+      { q: 'O Melzinho do Amor é original?', a: 'Sim! Trabalhamos exclusivamente com o produto original importado diretamente do Oriente Médio. Cada sachê vem com selo de autenticidade.' },
+      { q: 'Quanto tempo leva para fazer efeito?', a: 'O efeito começa a ser sentido entre 20 e 30 minutos após o consumo. Para melhores resultados, consuma com o estômago levemente alimentado.' },
+      { q: 'Por quanto tempo dura o efeito?', a: 'Um único sachê proporciona energia, disposição e aumento da libido por até 5 dias consecutivos.' },
+      { q: 'Tem alguma contraindicação?', a: 'O produto é 100% natural, sem substâncias químicas ou farmacológicas. Não é recomendado para menores de 18 anos ou pessoas com alergias conhecidas a mel. Em caso de dúvida, consulte um médico.' },
+      { q: 'A entrega é discreta?', a: 'Absolutamente. A embalagem de envio é totalmente neutra, sem qualquer identificação do produto ou da marca externamente.' },
+      { q: 'Como rastrear meu pedido?', a: 'Após a confirmação do pagamento, você receberá o código de rastreio em até 1 dia útil por e-mail e WhatsApp.' },
+      { q: 'Posso parcelar no cartão?', a: 'Sim! Aceitamos parcelamento em até 12x no cartão de crédito, além de PIX com 5% de desconto e boleto bancário.' },
+    ];
+
+    const faqContainer = document.getElementById('faq-container');
+    faqs.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'bg-dark-700/60 border border-gold-700/20 rounded-2xl overflow-hidden reveal';
+      div.style.transitionDelay = `${i * 80}ms`;
+      div.innerHTML = `
+        <button class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 cursor-pointer hover:bg-gold-500/5 transition-colors group" aria-expanded="false" aria-controls="faq-answer-${i}">
+          <span class="text-white font-semibold text-sm sm:text-base group-hover:text-gold-300 transition-colors">${item.q}</span>
+          <svg class="w-5 h-5 text-gold-400 flex-shrink-0 transition-transform duration-200 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="faq-answer-${i}" class="faq-answer overflow-hidden" style="max-height:0; transition: max-height 0.35s ease;">
+          <p class="px-6 pb-5 text-gray-400 text-sm leading-relaxed">${item.a}</p>
+        </div>
+      `;
+      faqContainer.appendChild(div);
+      observer.observe(div);
+
+      const btn = div.querySelector('button');
+      const answer = div.querySelector('.faq-answer');
+      const icon = div.querySelector('.faq-icon');
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => { a.style.maxHeight = '0'; });
+        document.querySelectorAll('.faq-icon').forEach(ic => ic.style.transform = '');
+        document.querySelectorAll('[aria-expanded]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        // Open clicked
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.style.transform = 'rotate(180deg)';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ——— Navbar scroll behavior ———
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const current = window.scrollY;
+      if (current > 80) {
+        navbar.style.top = '0';
+      } else {
+        navbar.style.top = '36px';
+      }
+      lastScroll = current;
+    }, { passive: true });
+  </script>
+</body>
+</html>
